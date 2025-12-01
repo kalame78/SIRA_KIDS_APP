@@ -165,7 +165,7 @@
                         <div class="w-full h-64 bg-slate-100 rounded-2xl overflow-hidden border-2 border-slate-200 relative">
                             <iframe id="pdf-viewer" src="" class="w-full h-full"></iframe>
                             <a id="pdf-link" href="" target="_blank" class="absolute bottom-2 right-2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow hover:bg-orange-600 flex items-center gap-1">
-                                <i data-lucide="maximize" class="w-3 h-3"></i> Ouvrir
+                                <i data-lucide="maximize" class="w-3 h-3"></i> Ouvrir le PDF
                             </a>
                         </div>
                     </div>
@@ -188,8 +188,8 @@
                 <!-- 6. ACTIVITÉ DESSIN -->
                 <div id="drawing-zone" class="hidden">
                     <div class="flex items-center gap-2 mb-2 px-2">
-                        <span class="bg-green-600 text-white p-2 rounded-full shadow"><i data-lucide="pencil" class="w-5 h-5"></i></span>
-                        <h3 class="font-bold text-green-700 text-lg">DESSINE</h3>
+                        <span class="bg-indigo-600 text-white p-2 rounded-full shadow"><i data-lucide="pencil" class="w-5 h-5"></i></span>
+                        <h3 class="font-bold text-indigo-700 text-lg">DESSINE</h3>
                     </div>
                     
                     <div class="bg-white p-2 rounded-3xl shadow-lg border-b-4 border-green-200">
@@ -248,7 +248,6 @@
 
     <!-- LOGIQUE JS -->
     <script>
-        // --- DONNÉES MISES À JOUR (LEÇON 2 REMPLIE) ---
         const COURSES = [
             {
                 id: 1,
@@ -274,7 +273,7 @@
                 image: "https://images.unsplash.com/photo-1595267660232-4752b07e594d?q=80",
                 color: "bg-yellow-600",
                 
-                // TOUT EST ICI !
+                // >>>>> TOUT EST ICI (LEÇON 2) <<<<<
                 videoUrl: "cours_video_1.mp4", 
                 audioUrl: "audio_sedan_et_bedou.mp3",
                 audioTitle: "SEDAN ET BEDOU - Histoire audio",
@@ -296,7 +295,8 @@
             }
         ];
 
-        let userProgress = JSON.parse(localStorage.getItem('sirakids_progress')) || { xp: 0, unlockedLevel: 1, badges: [] };
+        // ON DÉBLOQUE LE NIVEAU 2 PAR DÉFAUT POUR QUE TU PUISSES CLIQUER
+        let userProgress = JSON.parse(localStorage.getItem('sirakids_progress')) || { xp: 0, unlockedLevel: 2, badges: [] };
 
         lucide.createIcons();
         renderMap();
